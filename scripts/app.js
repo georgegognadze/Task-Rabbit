@@ -7,7 +7,7 @@ var app = angular
     'ngRoute',    
     'firebase'
   ])
-  .constant('FURL', 'https://your-firebase.firebaseio.com/')  
+  .constant('FURL', 'https://clone-task-ninja.firebaseio.com/')  
   .config(function ($routeProvider) {
     $routeProvider      
       .when('/', {
