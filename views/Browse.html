@@ -22,7 +22,7 @@
 				<div class="row-content">
 					<h4 class="list-group-item-heading">{{task.title}}</h4>
 					<span class="list-group-item-text">
-						{{task.description}}
+						{{task.description | limitTo:25}}{{ task.description.length > 25? "..." : ""}}
 					</span>	
 				</div>
 					<div class="payment">
