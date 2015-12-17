@@ -1,6 +1,6 @@
 'user strict'
 
-app.controller('AuthController', function($scope, location, Auth) {
+app.controller('AuthController', function($scope, $location, Auth) {
 
 	$scope.register = function(user) {
 		Auth.register(user).then(function() {
