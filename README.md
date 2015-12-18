@@ -1,3 +1,3 @@
 # Task-Rabbit
-Task-Rabbit clone 
-Just for fun
+Task-Rabbit clone <br>
+Made just for fun and learning purposes.
