@@ -1,6 +1,6 @@
 # Task-Rabbit
 ####Task-Rabbit clone <br>
-To check what does this project looks like first we need to set up HTTP server. For now I use python to set up HTTP server. <br>
+To check what does this project looks like first we need to set up HTTP server. For now I use python 3.5.0 to set up HTTP server. <br>
 One simple example if your folder is placed on Desktop.
 
 ```
