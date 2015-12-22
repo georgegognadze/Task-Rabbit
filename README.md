@@ -16,5 +16,5 @@ After that you are ready to enter this
 localhost:8000
 ```
 
-to your favorite browser and see what does Task-Rabbit looks like. <br>
+to your favorite browser and see clone of Task-Rabbit web site. <br>
 Made just for fun and learning purposes.
