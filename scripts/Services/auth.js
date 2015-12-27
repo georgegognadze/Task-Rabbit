@@ -13,7 +13,7 @@ var Auth = {
 		var profile = {
 			name: user.name,
 			email: user.email,
-			gravatar: get_gravatar(user.email, 40);
+			gravatar: get_gravatar(user.email, 40)
 		};
 
 		var profileRef = $firebase(ref.child('profile'));
