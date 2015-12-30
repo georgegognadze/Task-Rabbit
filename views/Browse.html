@@ -13,8 +13,11 @@
 				</div>
 				
 				<!-- Task List-->
-				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'" ng-href="#/edit/{{task.$id}}">
+				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'" ng-href="#/browse/{{task.$id}}">
 				<div class="list-group-item">
+					<div class="row-picture">
+						<img class="circle" ng-src="">
+					</div>
 				<div class="row-content">
 					<h4 class="list-group-item-heading">{{task.title}}</h4>
 					<span class="list-group-item-text">
@@ -23,6 +26,7 @@
 				</div>
 					<div class="payment">
 						<div>${{task.total}}</div>
+						<span class="label status open">open</span>
 					</div>
 				</div>
 				<div class="list-group-separator"></div>
