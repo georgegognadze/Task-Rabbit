@@ -19,9 +19,9 @@
 						<img class="circle" ng-src="">
 					</div>
 				<div class="row-content">
-					<h4 class="list-group-item-heading">{{task.title}}</h4>
+					<h4 class="list-group-item-heading">{{task.title | limitTo:20}}{{ task.title.length > 20? "..." : ""}}</h4>
 					<span class="list-group-item-text">
-						{{task.description | limitTo:20}}{{ task.description.length > 20? "..." : ""}}
+						<span am-time-ago="1033002758346"></span>
 					</span>	
 				</div>
 					<div class="payment">
@@ -49,7 +49,7 @@
 			<span>
 				<img src="" class="img-circle gravatar">
 				Posted by George Gognadze - 
-				<span am-time-ago="12421840368791"></span>&nbsp;
+				<span am-time-ago="1033002758346"></span>&nbsp;
 				<span class="label status open">open</span>
 			</span>		
 			</div>
