@@ -13,7 +13,8 @@ var app = angular
   .config(function ($routeProvider) {
     $routeProvider      
       .when('/', {
-        templateUrl: 'views/browse.html'        
+        templateUrl: 'views/browse.html',
+        controller: 'BrowseController'        
       })
       .when('/login', {
         templateUrl: 'views/login.html',   
@@ -23,9 +24,9 @@ var app = angular
         templateUrl: 'views/register.html',
         controller: 'AuthController'
       })
-      .when('/browse', {
+      .when('/browse/:taskId', {
         templateUrl: 'views/browse.html',
-        controller: 'TaskController'
+        controller: 'BrowseController'
       })
       .otherwise({
         redirectTo: '/'
