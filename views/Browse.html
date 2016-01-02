@@ -13,7 +13,7 @@
 				</div>
 				
 				<!-- Task List-->
-				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'" ng-href="#/browse/{{task.$id}}">
+				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'datetime':true" ng-href="#/browse/{{task.$id}}">
 				<div class="list-group-item">
 					<div class="row-picture">
 						<img class="circle" ng-src="">
@@ -36,11 +36,11 @@
 
 		<div class="col-md-6">
 
-			<div ng-show="false">
+			<div ng-show="listMode">
 				<img src="images/browse.jpg" class="img-responsive img-browse">
 			</div>
 
-		<div ng-show="true">
+		<div ng-show="!listMode">
 
 			<!-- HEADER -->
 		<div class="row">
