@@ -16,17 +16,17 @@
 				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'datetime':true" ng-href="#/browse/{{task.$id}}">
 				<div class="list-group-item">
 					<div class="row-picture">
-						<img class="circle" ng-src="">
+						<img class="circle" ng-src="{{task.gravatar}}">
 					</div>
 				<div class="row-content">
 					<h4 class="list-group-item-heading">{{task.title | limitTo:20}}{{ task.title.length > 20? "..." : ""}}</h4>
 					<span class="list-group-item-text">
-						<span am-time-ago="1033002758346"></span>
+						<span am-time-ago="task.datetime"></span>
 					</span>	
 				</div>
 					<div class="payment">
 						<div>${{task.total}}</div>
-						<span class="label status open">open</span>
+						<span class="label status {{task.status}}">{{task.status}}</span>
 					</div>
 				</div>
 				<div class="list-group-separator"></div>
@@ -45,20 +45,20 @@
 			<!-- HEADER -->
 		<div class="row">
 			<div class="col-md-8">	
-			<h3>Task title here</h3>	
+			<h3>{{selectedTask.title}}</h3>	
 			<span>
-				<img src="" class="img-circle gravatar">
-				Posted by George Gognadze - 
-				<span am-time-ago="1033002758346"></span>&nbsp;
-				<span class="label status open">open</span>
+				<img src="{{selectedTask.gravatar}}" class="img-circle gravatar">
+				Posted by {{selectedTask.name}} - 
+				<span am-time-ago="selectedTask.datetime"></span>&nbsp;
+				<span class="label status {{selectedTask.status}}">{{selectedTask.status}}</span>
 			</span>		
 			</div>
 
 			<div class="col-md-4 title">
 				<div class="price-tag">
-					$15
+					${{selectedTask.total}}
 
-					<div ng-show="true">
+					<div ng-show="isTaskCreator(selectedTask) && isOpen(selectedTask)">
 						<div class="btn-group">
 							<a href="" class="btn btn-warning">Admin</a>
 							<a href="" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret">
@@ -85,7 +85,7 @@
 							<h3 class="panel-title">Description</h3>
 						</div>
 						<div class="panel-body">
-							This is task's description
+							{{selectedTask.description}}
 						</div>
 					</div>
 				</div>
