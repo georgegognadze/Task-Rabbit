@@ -17,4 +17,4 @@ localhost:8000
 ```
 
 to your favorite browser and see clone of Task-Rabbit web site. <br>
-Made just for fun and learning purposes.
+It was made for fun and learning purposes.
