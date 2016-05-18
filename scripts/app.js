@@ -5,13 +5,28 @@ var app = angular
     'ngAnimate',
     'ngResource',    
     'ngRoute',    
-    'firebase'
+    'firebase',
+    'toaster',
+    'angularMoment'
   ])
-  .constant('FURL', 'https://your-firebase.firebaseio.com/')  
+  .constant('FURL', 'https://clone-task-ninja.firebaseio.com/')  
   .config(function ($routeProvider) {
     $routeProvider      
       .when('/', {
-        templateUrl: 'views/main.html'        
+        templateUrl: 'views/browse.html',
+        controller: 'BrowseController'        
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',   
+        controller: 'AuthController'     
+      })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'AuthController'
+      })
+      .when('/browse/:taskId', {
+        templateUrl: 'views/browse.html',
+        controller: 'BrowseController'
       })
       .otherwise({
         redirectTo: '/'
