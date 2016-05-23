@@ -21,7 +21,8 @@ var app = angular
         templateUrl: 'views/edit.html'
       })
       .when('/browse', {
-        templateUrl: 'views/browse.html'
+        templateUrl: 'views/browse.html',
+        controller: 'TaskController'
       })
       .otherwise({
         redirectTo: '/'
