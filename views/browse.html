@@ -2,7 +2,24 @@
 	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
 			<div class="list-group">
+				<div class="title">
+					<a href="#/post" class="btn btn-warning">Post a Task</a>
+				</div>
+				<br>
 				
+				<!-- TASK LIST -->
+				<a ng-repeat="task in tasks">
+					<div class="row-content">
+						 <h4>class="list-group-item-heading">{{task.title}}</h4> 
+						 <span class="list-group-item-text">
+						 	{{task.description}}
+						 </span>							 
+					</div>
+					<div class="payment">
+						<div>${{task.total}}</div>
+					</div>
+					<div class="list-group-separator"></div>
+					</a>
 			</div>
 		</div>
 	</div>
