@@ -2,10 +2,10 @@
 	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
 			<div class="list-group">
-			<div class="form-group">
-				<div class="input-group">
-					<div class="input-group-addon">
-						<span class="glyphicon glyphicon-search" area-hidden="true"></span>				
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-search" area-hidden="true"></span>				
 					</div>
 					<input type="text" ng-model="searchTask" class="form-control" placeholder="Search">
 				</div>
@@ -16,7 +16,7 @@
 				<br>
 				
 				<!-- TASK LIST -->
-				<a ng-repeat="task in tasks">
+				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'">
 					<div class="list-group-item">
 					<div class="row-content">
 						 <h4 class="list-group-item-heading">{{task.title}}</h4> 
