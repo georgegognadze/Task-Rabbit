@@ -1,9 +1,18 @@
 'use strict'
 
-app.controller('TaskController', function($scope, FURL, $firebase, $location) {
+app.controller('TaskController', function($scope, FURL, $firebase, $location, $routeParams) {
 
 	var ref = new Firebase(FURL);
 	var fbTasks = $firebase(ref.child('tasks')).$asArray();
+	var taskId = $routeParams.taskId;
+
+	if(taskId) {
+		$scope.selectedTask = getTask(taskId);
+	}
+
+	function getTask(taskId) {
+		return $firebase(ref.child('tasks').child(taskId)).$asObject();
+	}
 
 	$scope.tasks = fbTasks;
 
