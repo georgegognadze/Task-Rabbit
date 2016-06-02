@@ -14,11 +14,6 @@ app.controller('TaskController', function($scope, FURL, $firebase, $location, $r
 		return $firebase(ref.child('tasks').child(taskId)).$asObject();
 	}
 
-	function.updateTask = function(task) {
-		$scope.selectedTask.$save(task);
-		$location.path('/browse');
-	}
-
 	$scope.tasks = fbTasks;
 
 	$scope.postTask = function(task) {
