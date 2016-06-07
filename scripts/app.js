@@ -13,6 +13,9 @@ var app = angular
       .when('/', {
         templateUrl: 'views/main.html'        
       })
+      // .when('/changepass', {
+      //   templateUrl: 'views/partials/changepass.html'
+      // })
       .when('/login', {
         templateUrl: 'views/login.html'
       })
