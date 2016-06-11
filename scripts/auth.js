@@ -32,6 +32,14 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
 		}
 	};
 
+	auth.$onAuth(function(authData) {
+		if (authData) {
+			angular.copy(authData, Auth.user);
+		} else {
+			angular.copy({}, Auth.user);
+		}
+	});
+
 	return Auth;
 
 });
