@@ -25,6 +25,10 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
 
 		changePassword: function(user) {
 			return auth.$changePassword({email: user.email, oldPassword: user.oldpass, newPassword: user.newpass});
+		},
+
+		signedIn: function() {
+			return !!Auth.user.provider;
 		}
 	};
 
