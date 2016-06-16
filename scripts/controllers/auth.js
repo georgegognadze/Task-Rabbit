@@ -17,5 +17,21 @@ app.controller('AuthController', function($scope, $location, Auth) {
 		},  function(err) {
 			console.log("Error...");
 		});
-	}
+	};
+
+	$scope.changePassword = function(user) {
+
+		Auth.changePassword(user)
+		.then(function() {
+
+			// Reset form
+			$scope.user.email = '';
+			$scope.user.oldPass = '';
+			$scope.user.newPass = '';
+
+			console.log("Password changed successfully!");
+		}, function(err) {
+			console.log("Error...");
+		});
+	};
 });
