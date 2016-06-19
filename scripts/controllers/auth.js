@@ -8,9 +8,10 @@ app.controller('AuthController', function($scope, $location, Auth) {
 		}, function(err) {
 			console.log("Error...");
 		}); 
-	}
+	};
 
 	$scope.login = function(user) {
+		Auth.login(user)
 		.then(function() {
 			console.log("Logged in successfully!");
 			$location.path('/');
