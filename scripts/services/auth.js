@@ -7,7 +7,15 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
 
 	var Auth = {
 
-		user: {};
+		user: {},
+
+		createProfile: function(uid, user) {
+			var profile = {
+				name: user.name,
+				email: user.email,
+				gravatar: get_gravatar(user.email, 40);
+			}
+		},
 
 		login: function(user) {
 			return auth.$authWithPassword(
