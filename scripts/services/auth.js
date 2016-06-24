@@ -18,7 +18,6 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
 
 			var profileRef = $firebase(ref.child('profile'));
 			return profileRef.$set(uid, profile);
-
 		},
 
 		login: function(user) {
@@ -30,6 +29,9 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
 			return auth.$createUser({email: user.email, password: user.password})
 			.then(function() {
 				return Auth.login(user);
+			})
+			.then(function(data) {
+				return Auth.createProfile(data.uid, user);
 			});
 		},
 
