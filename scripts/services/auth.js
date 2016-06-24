@@ -51,6 +51,7 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
 	auth.$onAuth(function(authData) {
 		if (authData) {
 			angular.copy(authData, Auth.user);
+			Auth.user.profile = $firebase(ref.child('profile').child(authData.uid)).$asObject();
 		} else {
 			angular.copy({}, Auth.user);
 		}
