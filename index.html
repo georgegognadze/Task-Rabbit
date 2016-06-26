@@ -14,7 +14,7 @@
     
   </head>
   <body ng-app="TaskNinjaApp">
-
+  <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
   <div ng-include="'views/nav.html'"></div>
     <div class="jumbotron">
         <div ng-view=""></div>    
