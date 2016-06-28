@@ -24,6 +24,7 @@ app.controller('TaskController', function($scope, FURL, $firebase, $location, $r
 
 	$scope.postTask = function(task) {
 		fbTasks.$add(task);
+		toaster.pop('succes', "Task is created.");
 		$location.path('/browse');
 	}
 });
