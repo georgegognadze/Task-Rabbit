@@ -1,6 +1,6 @@
 'use strict'
 
-app.controller('TaskController', function($scope, FURL, $firebase, $location, $routeParams) {
+app.controller('TaskController', function($scope, FURL, $firebase, $location, $routeParams, toaster) {
 
 	var ref = new Firebase(FURL);
 	var fbTasks = $firebase(ref.child('tasks')).$asArray();
@@ -16,6 +16,7 @@ app.controller('TaskController', function($scope, FURL, $firebase, $location, $r
 
 	$scope.updateTask = function(task) {
 		$scope.selectedTask.$save(task);
+		toaster.pop('succes', "Task is updated.");
 		$location.path('/browse');
 	}
 
