@@ -15,9 +15,11 @@ app.controller('AuthController', function($scope, $location, Auth, toaster) {
 	$scope.login = function(user) {
 		Auth.login(user)
 		.then(function() {
+			toaster.pop('success', 'Logged in successfully');
 			// console.log("Logged in successfully!");
 			$location.path('/');
 		},  function(err) {
+			toaster.pop('error', 'Oops, something went wrong');
 			// console.log("Error...");
 		});
 	};
@@ -31,9 +33,10 @@ app.controller('AuthController', function($scope, $location, Auth, toaster) {
 			$scope.user.email = '';
 			$scope.user.oldPass = '';
 			$scope.user.newPass = '';
-
+			toaster.pop('success', 'Password changed successfully!');
 			// console.log("Password changed successfully!");
 		}, function(err) {
+			toaster.pop('error', 'Oops, something went wrong');
 			// console.log("Error...");
 		});
 	};
