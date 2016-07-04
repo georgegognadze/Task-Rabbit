@@ -12,7 +12,7 @@ var app = angular
   .config(function ($routeProvider) {
     $routeProvider      
       .when('/', {
-        templateUrl: 'views/main.html'        
+        templateUrl: 'views/browse.html'        
       })
       // .when('/changepass', {
       //   templateUrl: 'views/partials/changepass.html'
