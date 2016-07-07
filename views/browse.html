@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-offset-2 col-md-8">
+		<div class="col-md-offset-1 col-md-5">
 			<div class="list-group">
 					<div class="form-group">
 						<div class="input-group">
@@ -12,13 +12,16 @@
 			</div>
 				
 				<!-- TASK LIST -->
-				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'" ng-href="#/edit/{{task.$id}}">
+				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'" ng-href="#/browse/{{task.$id}}">
 					<div class="list-group-item">
+					<div class="row-picture">
+				            <img class="circle" ng-src="">
+				        </div>
 					<div class="row-content">
 						 <h4 class="list-group-item-heading">{{task.title}}</h4> 
 						 <span class="list-group-item-text">
 						 	{{task.description | limitTo: 25}}{{ task.description.length > 25? "..." : ""}}
-						 </span>							 
+						 </span>		 					 
 					</div>
 					<div class="payment">
 						<div>${{task.total}}</div>
@@ -27,5 +30,10 @@
 					</a>
 			</div>
 		</div>
+
+		<div class="col-md-6">
+			<h2>Details would be here...</h2>
+		</div>
+
 	</div>
 </div>
