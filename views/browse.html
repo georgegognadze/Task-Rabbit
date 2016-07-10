@@ -18,9 +18,9 @@
 				            <img class="circle" ng-src="">
 				        </div>
 					<div class="row-content">
-						 <h4 class="list-group-item-heading">{{task.title}}</h4> 
+						 <h4 class="list-group-item-heading">{{task.title | limitTo: 25}}{{ task.title.length > 25? "..." : ""}}</h4> 
 						 <span class="list-group-item-text">
-						 	{{task.description | limitTo: 25}}{{ task.description.length > 25? "..." : ""}}
+						 	<span am-time-ago="1414918800000"></span>
 						 </span>		 					 
 					</div>
 					<div class="payment">
@@ -34,8 +34,9 @@
 
 		<div class="col-md-6">
 			
-			<div ng-show="false"></div>
+			<div ng-show="false">
 			<img src="images/browse.jpg" class="img-responsive img-browse">
+		</div>
 		</div>
 
 
