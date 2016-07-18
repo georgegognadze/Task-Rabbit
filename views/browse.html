@@ -14,6 +14,9 @@
 				<!-- TASK LIST -->
 				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'" ng-href="#/browse/{{task.$id}}">
 					<div class="list-group-item">
+						<div class="row-picture">
+							<img src="circle" ng-src="">
+						</div>
 					<div class="row-content">
 						 <h4 class="list-group-item-heading">{{task.title}}</h4> 
 						 <span class="list-group-item-text">
