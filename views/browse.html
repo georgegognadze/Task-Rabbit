@@ -12,7 +12,7 @@
 			</div>
 				
 				<!-- TASK LIST -->
-				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'" ng-href="#/edit/{{task.$id}}">
+				<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'" ng-href="#/browse/{{task.$id}}">
 					<div class="list-group-item">
 					<div class="row-content">
 						 <h4 class="list-group-item-heading">{{task.title}}</h4> 
