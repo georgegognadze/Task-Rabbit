@@ -18,9 +18,9 @@
 					<img src="circle" ng-src="">
 				</div>
 				<div class="row-content">
-					<h4 class="list-group-item-heading">{{task.title}}</h4> 
+					<h4 class="list-group-item-heading">{{task.title | limitTo: 25}}{{ task.title.length > 25? "..." : ""}}</h4> 
 					  <span class="list-group-item-text">
-						{{task.description | limitTo: 25}}{{ task.description.length > 25? "..." : ""}}
+						
 					  </span>							 
 				</div>
 				  <div class="payment">
