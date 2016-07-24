@@ -6,4 +6,15 @@ app.factory('Task', function(FURL, $firebase, Auth) {
 	var tasks = $firebase(ref.child('task')).$asArray();
 	var user = Auth.user;
 
-}
+
+	var Task = {
+		all: tasks,
+
+		getTask: function(taskId) {
+			return $firebase(ref.child('tasks').child(taskId));
+		},
+		
+	};
+
+
+});
