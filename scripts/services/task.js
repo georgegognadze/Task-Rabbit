@@ -18,7 +18,11 @@ app.factory('Task', function(FURL, $firebase, Auth) {
 			task.datetime = Firebase.ServerValue.TIMESTAMP;
 			return tasks.$add(task);
 		},
-		
+
+		editTask: function(task) {
+			var t = this.getTask(task.$id);			
+			return t.$update({title: task.title, description: task.description, total: task.total});
+		},
 	};
 
 
