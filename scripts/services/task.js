@@ -13,6 +13,11 @@ app.factory('Task', function(FURL, $firebase, Auth) {
 		getTask: function(taskId) {
 			return $firebase(ref.child('tasks').child(taskId));
 		},
+
+		createTask: function(task) {
+			task.datetime = Firebase.ServerValue.TIMESTAMP;
+			return tasks.$add(task);
+		},
 		
 	};
 
