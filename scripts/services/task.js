@@ -29,6 +29,10 @@ app.factory('Task', function(FURL, $firebase, Auth) {
 			return t.$update({status: "cancelled"});
 		},
 
+		isCreator: function(task) {			
+			return (user && user.provider && user.uid === task.poster);
+		},
+
 	};
 
 
