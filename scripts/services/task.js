@@ -33,7 +33,12 @@ app.factory('Task', function(FURL, $firebase, Auth) {
 			return (user && user.provider && user.uid === task.poster);
 		},
 
+		isOpen: function(task) {
+			return task.status === "open";
+		}
+
 	};
 
+	return Task;
 
 });
