@@ -23,6 +23,12 @@ app.factory('Task', function(FURL, $firebase, Auth) {
 			var t = this.getTask(task.$id);			
 			return t.$update({title: task.title, description: task.description, total: task.total});
 		},
+
+		cancelTask: function(taskId) {
+			var t = this.getTask(taskId);
+			return t.$update({status: "cancelled"});
+		},
+
 	};
 
 
