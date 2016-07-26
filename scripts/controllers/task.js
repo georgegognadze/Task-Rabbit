@@ -15,5 +15,11 @@ app.controller('TaskController', function($scope, $location, toaster, Task, Auth
 			$location.path('/browse/' + ref.key());
 		});
 	};
-	
+
+	$scope.editTask = function(task) {
+		Task.editTask(task).then(function() {			
+			toaster.pop('success', "Task is updated.");
+		});
+	};
+
 });
