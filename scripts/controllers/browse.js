@@ -6,5 +6,6 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 	$scope.tasks = Task.all;
 
 	$scope.signedIn = Auth.signedIn;
+	$scope.listMode = true;
 
 });
