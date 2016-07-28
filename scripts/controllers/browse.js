@@ -5,4 +5,6 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 	$scope.searchTask = '';		
 	$scope.tasks = Task.all;
 
+	$scope.signedIn = Auth.signedIn;
+
 });
