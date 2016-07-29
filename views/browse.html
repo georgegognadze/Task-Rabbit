@@ -15,17 +15,17 @@
      <a ng-repeat="task in tasks | filter: searchTask | orderBy: 'datetime':true" ng-href="#/browse/{{task.$id}}">
 			<div class="list-group-item">
 				<div class="row-picture">
-					<img src="circle" ng-src="">
+					<img src="circle" ng-src="{{task.gravatar}}">
 				</div>
 				<div class="row-content">
 					<h4 class="list-group-item-heading">{{task.title | limitTo: 25}}{{ task.title.length > 25? "..." : ""}}</h4> 
 					  <span class="list-group-item-text">
-						<span am-time-ago="1414918800000"></span>
+						<span am-time-ago="task.datetime"></span>
 					  </span>							 
 				</div>
 				  <div class="payment">
 						<div>${{task.total}}</div>
-						<span class="label status open">open</span>
+						<span class="label status {{task.status}}">{{task.status}}</span>
 				  </div> 
 				</div>
 					<div class="list-group-separator"></div>
