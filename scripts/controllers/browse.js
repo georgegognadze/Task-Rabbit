@@ -14,4 +14,9 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 		setSelectedTask(task);	
 	}	
 
+	function setSelectedTask(task) {
+		$scope.selectedTask = task;
+
+	};	
+
 });
