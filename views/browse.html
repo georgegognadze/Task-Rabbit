@@ -45,18 +45,18 @@
 	<!-- HEADER -->
 	<div class="row">
 		<div class="col-md-8">		
-		  <h3>Task title here</h3>	
+		  <h3>{{selectedTask.title}}</h3>	
 		  <span>
 		  	<img src="" class="img-circle gravatar">
-		  	Posted by George Gognadze -
-		  	<span am-time-ago="1414918800000"></span>&nbsp;
-		  	<span class="label status open">open</span>
+		  	Posted by {{selectedTask.name}} -
+		  	<span am-time-ago="selectedTask.datetime"></span>&nbsp;
+		  	<span class="label status {{selectedTask.status}}">{{selectedTask.status}}</span>
 		  </span>
 		</div>
 
 		<div class="col-md-4 title">
 			   	<div class="price-tag">
-			   		30$
+			   		${{ selectedTask.total }}
 
 			   	<div ng-show="true">
 			   		<div class="btn-group">
