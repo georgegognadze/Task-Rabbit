@@ -17,6 +17,11 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 	function setSelectedTask(task) {
 		$scope.selectedTask = task;
 
+		if($scope.signedIn()) {
+			$scope.isTaskCreator = Task.isCreator;
+			$scope.isOpen = Task.isOpen;
+
+		}	
 	};	
 
 });
