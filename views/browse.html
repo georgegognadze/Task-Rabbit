@@ -11,8 +11,8 @@
 				</div>
 			</div>
 				
-				<!-- TASK LIST --> <!-- add filter for canceled task {title: searchTask , status: '!cancelled'}  -->
-     <a ng-repeat="task in tasks | filter: searchTask | orderBy: 'datetime':true" ng-href="#/browse/{{task.$id}}">
+				<!-- TASK LIST --> 
+     <a ng-repeat="task in tasks | filter: {title: searchTask , status: '!cancelled'} | orderBy: 'datetime':true" ng-href="#/browse/{{task.$id}}">
 			<div class="list-group-item">
 				<div class="row-picture">
 					<img src="circle" ng-src="{{task.gravatar}}">
