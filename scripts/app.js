@@ -16,9 +16,9 @@ var app = angular
         templateUrl: 'views/browse.html',
         controller: 'BrowseController'        
       })
-      // .when('/changepass', {
-      //   templateUrl: 'views/partials/changepass.html'
-      // })
+      .when('/changepass', {
+         templateUrl: 'views/partials/changepass.html'
+      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'AuthController'
