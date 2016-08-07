@@ -8,4 +8,6 @@ app.factory('Comment', function(FURL, $firebase) {
 
 	};
 
+	return Comment;
+	
 });
