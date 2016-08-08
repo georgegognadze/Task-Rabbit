@@ -10,6 +10,7 @@ app.factory('Comment', function(FURL, $firebase) {
 		},
 
 		addComment: function(taskId, comment) {
+			var task_comments = this.comments(taskId);
 			
 		}
 	};
