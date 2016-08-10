@@ -37,7 +37,11 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 
 	//add addComment function
 	$scope.addComment = function() {
-		
+		var comment = {
+			content: $scope.content,
+			name: $scope.user.profile.name,
+			gravatar: $scope.user.profile.gravatar
+		};
 	}
 
 });
