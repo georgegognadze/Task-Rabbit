@@ -24,6 +24,9 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 			$scope.isOpen = Task.isOpen;
 
 		}	
+
+		// Get list of comments for the selected task
+		$scope.comments = Comment.comments(task.$id);
 	};	
 
 	$scope.cancelTask = function(taskId) {
