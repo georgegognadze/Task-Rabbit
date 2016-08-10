@@ -35,4 +35,9 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 		});
 	};
 
+	//add addComment function
+	$scope.addComment = function() {
+		
+	}
+
 });
