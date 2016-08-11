@@ -42,6 +42,10 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 			name: $scope.user.profile.name,
 			gravatar: $scope.user.profile.gravatar
 		};
-	}
 
+		Comment.addComment($scope.selectedTask.$id, comment).then(function() {				
+			$scope.content = '';		
+		});	
+	};
+	
 });
